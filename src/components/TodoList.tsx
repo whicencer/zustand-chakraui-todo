@@ -22,9 +22,9 @@ const TodoList = () => {
   return (
     <div>
       <Stack direction='row' mb={10} spacing='4'>
-        <Button onClick={() => changeFilter('all')}>All</Button>
-        <Button onClick={() => changeFilter('completed')}>Completed</Button>
-        <Button onClick={() => changeFilter('uncompleted')}>Uncompleted</Button>
+        <Button onClick={() => changeFilter('all')} disabled={ filter === 'all' }>All</Button>
+        <Button onClick={() => changeFilter('completed')} disabled={ filter === 'completed' }>Completed</Button>
+        <Button onClick={() => changeFilter('uncompleted')} disabled={ filter === 'uncompleted' }>Uncompleted</Button>
       </Stack>
       { todos.map(todo => <TodoItem todo={todo} key={todo.id} />) }
       <Flex alignItems={'center'} mt={'20px'}>
